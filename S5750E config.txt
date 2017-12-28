@@ -1,0 +1,122 @@
+!
+radius-server key 0 dcn12345
+radius-server authentication host 10.0.0.10
+radius-server accounting host 10.0.0.10
+aaa-accounting enable
+aaa enable
+!
+dot1x enable
+!
+Interface Ethernet1/0/23
+ dot1x enable
+ dot1x port-method portbased
+!
+Interface Ethernet1/0/24
+!
+Interface Ethernet1/0/25
+!
+Interface Ethernet1/0/26
+!
+Interface Ethernet1/0/27
+!
+Interface Ethernet1/0/28
+!
+interface Ethernet0
+!
+interface Vlan1
+ ip address 10.0.0.5 255.255.255.0
+!
+!
+
+
+
+
+DEBUG:
+#debug dot1x detail all interface ethernet 1/0/23  
+
+#%Jan 02 04:40:14 2006 %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet1/0/23, changed state to UP
+%Jan 02 04:40:36 2006 802.1x: ##########pae-id 0 send EAPOL packet EAPOL_EAP to 01-80-c2-00-00-03 on port Ethernet1/0/23, vlan 1.
+%Jan 02 04:40:36 2006 802.1x: EAP code: REQUEST, id: 13, length: 5.
+%Jan 02 04:40:36 2006 802.1x: request/response type: IDENTIFY
+%Jan 02 04:40:36 2006 802.1x: ****************received EAPOL packet EAPOL_EAP on port Ethernet1/0/23.
+%Jan 02 04:40:36 2006 802.1x: EAP code: RESPONSE, id: 13, length: 10.
+%Jan 02 04:40:36 2006 802.1x: request/response type: IDENTIFY
+%Jan 02 04:40:36 2006 802.1x: ##########pae-id 1 send EAPOL packet EAPOL_EAP to 01-80-c2-00-00-03 on port Ethernet1/0/23, vlan 1.
+%Jan 02 04:40:36 2006 802.1x: EAP code: REQUEST, id: 1, length: 5.
+%Jan 02 04:40:36 2006 802.1x: request/response type: IDENTIFY
+%Jan 02 04:40:36 2006 802.1x: ****************received EAPOL packet EAPOL_EAP on port Ethernet1/0/23.
+%Jan 02 04:40:36 2006 802.1x: EAP code: RESPONSE, id: 1, length: 10.
+%Jan 02 04:40:36 2006 802.1x: request/response type: IDENTIFY
+%Jan 02 04:40:37 2006 802.1x: Relay EAP request (len: 6) to supplicant...
+%Jan 02 04:40:37 2006 802.1x: ##########pae-id 1 send EAPOL packet EAPOL_EAP to 00-1d-72-88-57-a8 on port Ethernet1/0/23, vlan 1.
+%Jan 02 04:40:37 2006 802.1x: EAP code: REQUEST, id: 2, length: 6.
+%Jan 02 04:40:37 2006 802.1x: request/response type: EAP-TLS
+%Jan 02 04:40:37 2006 802.1x: ****************received EAPOL packet EAPOL_EAP on port Ethernet1/0/23.
+%Jan 02 04:40:37 2006 802.1x: EAP code: RESPONSE, id: 2, length: 6.
+%Jan 02 04:40:37 2006 802.1x: request/response type: NAK
+%Jan 02 04:40:37 2006 802.1x: Relay EAP request (len: 6) to supplicant...
+%Jan 02 04:40:37 2006 802.1x: ##########pae-id 1 send EAPOL packet EAPOL_EAP to 00-1d-72-88-57-a8 on port Ethernet1/0/23, vlan 1.
+%Jan 02 04:40:37 2006 802.1x: EAP code: REQUEST, id: 3, length: 6.
+%Jan 02 04:40:37 2006 802.1x: request/response type: EAP-PEAP
+%Jan 02 04:40:37 2006 802.1x: ****************received EAPOL packet EAPOL_EAP on port Ethernet1/0/23.
+%Jan 02 04:40:37 2006 802.1x: EAP code: RESPONSE, id: 3, length: 112.
+%Jan 02 04:40:37 2006 802.1x: request/response type: EAP-PEAP
+%Jan 02 04:40:37 2006 802.1x: Relay EAP request (len: 1034) to supplicant...
+%Jan 02 04:40:37 2006 802.1x: ##########pae-id 1 send EAPOL packet EAPOL_EAP to 00-1d-72-88-57-a8 on port Ethernet1/0/23, vlan 1.
+%Jan 02 04:40:37 2006 802.1x: EAP code: REQUEST, id: 4, length: 1034.
+%Jan 02 04:40:37 2006 802.1x: request/response type: EAP-PEAP
+%Jan 02 04:40:37 2006 802.1x: ****************received EAPOL packet EAPOL_EAP on port Ethernet1/0/23.
+%Jan 02 04:40:37 2006 802.1x: EAP code: RESPONSE, id: 4, length: 6.
+%Jan 02 04:40:37 2006 802.1x: request/response type: EAP-PEAP
+%Jan 02 04:40:37 2006 802.1x: Relay EAP request (len: 1030) to supplicant...
+%Jan 02 04:40:37 2006 802.1x: ##########pae-id 1 send EAPOL packet EAPOL_EAP to 00-1d-72-88-57-a8 on port Ethernet1/0/23, vlan 1.
+%Jan 02 04:40:37 2006 802.1x: EAP code: REQUEST, id: 5, length: 1030.
+%Jan 02 04:40:37 2006 802.1x: request/response type: EAP-PEAP
+%Jan 02 04:40:37 2006 802.1x: ****************received EAPOL packet EAPOL_EAP on port Ethernet1/0/23.
+%Jan 02 04:40:37 2006 802.1x: EAP code: RESPONSE, id: 5, length: 6.
+%Jan 02 04:40:37 2006 802.1x: request/response type: EAP-PEAP
+%Jan 02 04:40:37 2006 802.1x: Relay EAP request (len: 560) to supplicant...
+%Jan 02 04:40:37 2006 802.1x: ##########pae-id 1 send EAPOL packet EAPOL_EAP to 00-1d-72-88-57-a8 on port Ethernet1/0/23, vlan 1.
+%Jan 02 04:40:37 2006 802.1x: EAP code: REQUEST, id: 6, length: 560.
+%Jan 02 04:40:37 2006 802.1x: request/response type: EAP-PEAP
+%Jan 02 04:40:37 2006 802.1x: ****************received EAPOL packet EAPOL_EAP on port Ethernet1/0/23.
+%Jan 02 04:40:37 2006 802.1x: EAP code: RESPONSE, id: 6, length: 192.
+%Jan 02 04:40:37 2006 802.1x: request/response type: EAP-PEAP
+%Jan 02 04:40:37 2006 802.1x: Relay EAP request (len: 49) to supplicant...
+%Jan 02 04:40:37 2006 802.1x: ##########pae-id 1 send EAPOL packet EAPOL_EAP to 00-1d-72-88-57-a8 on port Ethernet1/0/23, vlan 1.
+%Jan 02 04:40:37 2006 802.1x: EAP code: REQUEST, id: 7, length: 49.
+%Jan 02 04:40:37 2006 802.1x: request/response type: EAP-PEAP
+%Jan 02 04:40:37 2006 802.1x: ****************received EAPOL packet EAPOL_EAP on port Ethernet1/0/23.
+%Jan 02 04:40:37 2006 802.1x: EAP code: RESPONSE, id: 7, length: 6.
+%Jan 02 04:40:37 2006 802.1x: request/response type: EAP-PEAP
+%Jan 02 04:40:37 2006 802.1x: Relay EAP request (len: 32) to supplicant...
+%Jan 02 04:40:37 2006 802.1x: ##########pae-id 1 send EAPOL packet EAPOL_EAP to 00-1d-72-88-57-a8 on port Ethernet1/0/23, vlan 1.
+%Jan 02 04:40:37 2006 802.1x: EAP code: REQUEST, id: 8, length: 32.
+%Jan 02 04:40:37 2006 802.1x: request/response type: EAP-PEAP
+%Jan 02 04:40:37 2006 802.1x: ****************received EAPOL packet EAPOL_EAP on port Ethernet1/0/23.
+%Jan 02 04:40:37 2006 802.1x: EAP code: RESPONSE, id: 8, length: 33.
+%Jan 02 04:40:37 2006 802.1x: request/response type: EAP-PEAP
+%Jan 02 04:40:37 2006 802.1x: Relay EAP request (len: 54) to supplicant...
+%Jan 02 04:40:37 2006 802.1x: ##########pae-id 1 send EAPOL packet EAPOL_EAP to 00-1d-72-88-57-a8 on port Ethernet1/0/23, vlan 1.
+%Jan 02 04:40:37 2006 802.1x: EAP code: REQUEST, id: 9, length: 54.
+%Jan 02 04:40:37 2006 802.1x: request/response type: EAP-PEAP
+%Jan 02 04:40:37 2006 802.1x: ****************received EAPOL packet EAPOL_EAP on port Ethernet1/0/23.
+%Jan 02 04:40:37 2006 802.1x: EAP code: RESPONSE, id: 9, length: 87.
+%Jan 02 04:40:37 2006 802.1x: request/response type: EAP-PEAP
+%Jan 02 04:40:37 2006 802.1x: Relay EAP request (len: 74) to supplicant...
+%Jan 02 04:40:37 2006 802.1x: ##########pae-id 1 send EAPOL packet EAPOL_EAP to 00-1d-72-88-57-a8 on port Ethernet1/0/23, vlan 1.
+%Jan 02 04:40:37 2006 802.1x: EAP code: REQUEST, id: 10, length: 74.
+%Jan 02 04:40:37 2006 802.1x: request/response type: EAP-PEAP
+%Jan 02 04:40:37 2006 802.1x: ****************received EAPOL packet EAPOL_EAP on port Ethernet1/0/23.
+%Jan 02 04:40:37 2006 802.1x: EAP code: RESPONSE, id: 10, length: 29.
+%Jan 02 04:40:37 2006 802.1x: request/response type: EAP-PEAP
+%Jan 02 04:40:37 2006 802.1x: Relay EAP request (len: 38) to supplicant...
+%Jan 02 04:40:37 2006 802.1x: ##########pae-id 1 send EAPOL packet EAPOL_EAP to 00-1d-72-88-57-a8 on port Ethernet1/0/23, vlan 1.
+%Jan 02 04:40:37 2006 802.1x: EAP code: REQUEST, id: 11, length: 38.
+%Jan 02 04:40:37 2006 802.1x: request/response type: EAP-PEAP
+%Jan 02 04:40:37 2006 802.1x: ****************received EAPOL packet EAPOL_EAP on port Ethernet1/0/23.
+%Jan 02 04:40:37 2006 802.1x: EAP code: RESPONSE, id: 11, length: 38.
+%Jan 02 04:40:37 2006 802.1x: request/response type: EAP-PEAP
+%Jan 02 04:40:37 2006 802.1x: ##########pae-id 1 send EAPOL packet EAPOL_EAP to 00-1d-72-88-57-a8 on port Ethernet1/0/23, vlan 1.
+%Jan 02 04:40:37 2006 802.1x: EAP code: SUCCESS, id: 11, length: 4.
+%Jan 02 04:40:37 2006 Dot1x: user user1 login successfully
